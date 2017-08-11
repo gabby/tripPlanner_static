@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(routes)
 
 // do app.listen (inside a db.sync)
-db.sync()
+db.sync({logging:false})
 	.then(function(){
 		app.listen(3000, function(){
 			console.log('keeping it 3000')

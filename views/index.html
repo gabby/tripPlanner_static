@@ -1,5 +1,36 @@
-{% extends "layout.html" %}
-
+{% extends "layout.html" %} 
 {% block content %}
+
 <h1>Welcome to tripplanner!</h1>
+<div class="col-xs-6 col-sm-12">
+    <div class="panel panel-default">
+        <div class="panel-body" id="options-panel">
+            <div>
+                <h4>Hotels</h4>
+                <select data-type="hotel" id="hotel-choices">
+                    {% for hotel in hotels %}
+                        <option>{{ hotel.name }}</option>
+                    {% endfor %} 
+              </select>
+            </div>
+            <div>
+                <h4>Restaurants</h4>
+                <select data-type="restaurant" id="restaurant-choices">
+                    {% for restaurant in restaurants %}
+                        <option>{{ restaurant.name }}</option>
+                    {% endfor %} 
+              </select>
+            </div>
+            <div>
+                <h4>Activities</h4>
+                <select data-type="activity" id="activity-choices">
+                    {% for activity in activities %}
+                        <option>{{ activity.name }}</option>
+                    {% endfor %}
+              </select>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

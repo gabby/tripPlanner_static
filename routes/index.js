@@ -28,7 +28,9 @@ router.get('/', function(req, res, next){
 		});
 	})
 	.catch(next);
-});
+}); 
+
+router.get('/bootstrap/css')
 
 
 module.exports = router

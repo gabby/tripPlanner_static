@@ -10,7 +10,7 @@ const db = require('./models')
 const routes = require('./routes')
 
 // make an app instance of express
-const app = express()
+const app = express();
 
 // do middleware
 // logging
@@ -25,6 +25,8 @@ app.set('view engine', 'html')
 app.engine('html', nunjucks.render)
 
 app.use(express.static(path.join(__dirname, 'public')))
+app.use('/bootstrap/', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/')));
+app.use('/jquery/', express.static(path.join(__dirname, '/node_modules/jquery/dist/')));
 
 // do routes
 app.use(routes)
